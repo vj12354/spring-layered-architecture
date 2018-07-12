@@ -1,0 +1,25 @@
+{
+  "priority": 10,
+  "request": {
+    "method": "GET",
+    "urlPattern": "/products/C8GDyLrHJb"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": "C8GDyLrHJb",
+      "name": "Amazing Salad!",
+      "price": 499,
+      "promotions": [
+        {
+          "id": "Gm1piPn7Fg",
+          "type": "FLAT_PERCENT",
+          "amount": 10
+        }
+      ]
+    }
+  }
+}

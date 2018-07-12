@@ -1,0 +1,19 @@
+{
+  "priority": 10,
+  "request": {
+    "method": "GET",
+    "urlPattern": "/products/4MB7UfpTQs"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": "4MB7UfpTQs",
+      "name": "Boring Fries!",
+      "price": 199,
+      "promotions": []
+    }
+  }
+}

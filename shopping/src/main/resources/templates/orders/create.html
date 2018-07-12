@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h3>Enter product quantities</h3>
+
+<form method="POST" data-th-object="${orderDto}" data-th-action="@{/orders/}">
+          
+	<table class="col-md-12">
+	<thead>
+		<tr>
+           	<th>Product Name</th>
+           	<th>Cost</th>
+           	<th>Quantity</th>
+        </tr>
+     </thead>
+     <tbody>
+	    <tr data-th-each="item, rowStat : ${orderDto.items}" th:object="${item}">
+		    	<td>
+		        	<span data-th-text="*{product.name}">name</span>
+		    	</td>
+	        <td>
+		        	<span data-th-text="*{product.price}">price</span>
+	        </td>
+	        <td>
+				<input type="hidden" th:field="${orderDto.items[__${rowStat.index}__].product}"
+						th:value="${{orderDto.items[__${rowStat.index}__].product}}" placeholder="No. of units" >
+				<input type="text" class="form-control" th:field="${orderDto.items[__${rowStat.index}__].quantity}"
+						 placeholder="No. of units" >
+	        </td>
+	    </tr>
+	 </tbody>
+	</table>
+	<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="submit" value="Order Checkout">
+</form>
+</body>
+</html>

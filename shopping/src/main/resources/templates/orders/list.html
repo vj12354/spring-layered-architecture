@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shopping Order List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div>
+		<br/>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="/order/create-form" th:href="@{/orders/create-form}">Place an Order</a>
+		<br/>
+	</div>
+	<table class="col-md-12" th:if="${not #lists.isEmpty(orders)}">
+	<thead>
+		<tr>
+			<th>Order ID </th>
+           	<th>Checkout Time</th>
+           	<th>Net Total</th>
+        </tr>
+     </thead>
+     <tbody>
+	    <tr data-th-each="order, rowStat : ${orders}" th:object="${order}">
+		    	<td>
+		        		<span data-th-text="*{id}">ID</span>
+		    	</td>
+	        <td>
+		        	<a href="/orders/" th:href="@{/orders/{id}(id=${order.id})}">
+		        		<span data-th-text="*{#dates.format(checkoutTimestamp, 'MMM dd, yyyy HH:mm:ss ')}">time</span>
+		        	</a>
+	        </td>
+	        <td>
+	        		<span data-th-text="${T(com.example.shopping.config.AppConfig).getFormatted(order.totalNetPayable)}">total</span>
+	        </td>
+	    </tr>
+	 </tbody>
+	</table>
+</body>
+</html>

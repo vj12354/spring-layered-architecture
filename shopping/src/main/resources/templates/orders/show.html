@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product List</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h2>Checkout Order Details</h2>
+
+	<div>
+		<a href="/orders" th:href="@{/orders}">View All Orders</a>
+	</div>
+	
+<div th:object="${order}">
+	<ul style="list-style-type:none">
+       <li>
+   	      <strong>Order id</strong>
+          <span data-th-text="*{{id}}">idvalue</span>
+	  </li>
+       <li>
+   	      <small>Processed time</small>
+          <span data-th-text="*{{checkoutTimestamp}}">time</span>
+	  </li>
+       <li>
+       		<br/>
+   	      <small>Total (pre discount)</small>
+          <span data-th-text="*{{totalPreDiscount}}">total</span>
+	  </li>
+       <li>
+   	      <small>Promotion total</small>
+          <span data-th-text="' -'+*{{totalDiscount}}">discount</span>
+	  </li>
+       <li>
+   	      <strong>Checkout total</strong>
+          <span data-th-text="${T(com.example.shopping.config.AppConfig).getFormatted(order.totalNetPayable)}">nettotal</span>
+	  </li>
+       <li> 
+       		<br/>
+       		<span> . </span>
+       </li>
+       <li>
+   	      <u>Order Items</u>
+	  </li>
+       <li data-th-each="item : *{orderItems}" th:object="${item}">
+   	      <small th:text="*{productName}">name</small>
+          <span data-th-text="' * '+*{{quantity}} + '  = '">quantity</span>
+   	      <strong th:text="${T(com.example.shopping.config.AppConfig).getFormatted(item.totalPrice)}">total</strong>
+	  </li>
+       <li> 
+       		<br/>
+       		<span> . </span>
+       </li>
+       <li  th:if="${not #lists.isEmpty(order.orderPromotions)}">
+   	      <u>Promotions applied (Saving)</u>
+	  </li>
+       <li data-th-each="item : *{orderPromotions}" th:object="${item}" th:if="${not #lists.isEmpty(order.orderPromotions)}">
+   	      <small th:text="*{promotionType}">promo</small>
+          <strong data-th-text="' -'+${T(com.example.shopping.config.AppConfig).getFormatted(item.promotionValue)}">value</strong>
+	  </li>
+    </ul>
+</div>
+          
+
+</body>
+</html>
