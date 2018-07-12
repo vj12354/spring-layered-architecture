@@ -10,11 +10,11 @@ This example project implements shopping application based on below technologies
 
 # Layered architecture (Spring Application)
 This sample project demonstrates one of the best various ways to organisation different application layer into their own packages. Giving you control over maintenance and also to understand whats in your project. Here are the layer in the project:
-- data layer `Has entity models and repository implementation. And this is doesn't talk to any other layer`
-- service layer `Business use case logic sits here. And is aware of data layers to all repositories to access data.`
-- web layer `Web, RESTful controller go here and talks to Services to process Models (only, repositories shouldn't be accessed here). Also any DTO, web security and feature implementation can be implemented here. So feature slices (**without** service, repository & data access) can go here too.`
+- **Data layer** `Has entity models and repository implementation. And this is doesn't talk to any other layer`
+- **Service layer** `Business use case logic sits here. And is aware of data layers to talk to any repositories to access data.`
+- **Web layer** `Web, RESTful controller go here and talks to Services to process Models (only, repositories shouldn't be accessed here). Also any DTO, web security and feature implementation can be implemented here. So feature slices (without service, repository & data access) can go here too.`
 
- 
+
 # Business requirements (Shopping Checkout)
 Build a checkout system for a local supermarket that can be used to calculate the total cost of a basket which could contain any combination of items and promotions. Please bear in mind the following:
 - Items can be scanned in any order.
