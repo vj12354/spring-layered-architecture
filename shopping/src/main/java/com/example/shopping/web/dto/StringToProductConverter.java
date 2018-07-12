@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
-import com.example.shopping.model.json.Product;
+import com.example.shopping.data.json.Product;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component

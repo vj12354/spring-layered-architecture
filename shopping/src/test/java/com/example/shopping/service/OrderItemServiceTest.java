@@ -13,11 +13,11 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.shopping.ShoppingApplication;
-import com.example.shopping.model.Order;
-import com.example.shopping.model.OrderItem;
-import com.example.shopping.model.json.Product;
-import com.example.shopping.repo.OrderItemRepository;
-import com.example.shopping.repo.OrderRepository;
+import com.example.shopping.data.json.Product;
+import com.example.shopping.data.model.Order;
+import com.example.shopping.data.model.OrderItem;
+import com.example.shopping.data.repo.OrderItemRepository;
+import com.example.shopping.data.repo.OrderRepository;
 import com.example.shopping.service.dummy.TestData;
 
 @SpringBootTest(classes = { ShoppingApplication.class } )

@@ -5,8 +5,10 @@ import static org.junit.Assert.assertNull;
 
 import org.junit.Test;
 
-import com.example.shopping.model.json.Product;
-import com.example.shopping.model.json.PromotionType;
+import com.example.shopping.data.json.Product;
+import com.example.shopping.data.json.PromotionType;
+import com.example.shopping.data.model.Order;
+import com.example.shopping.data.model.OrderPromotion;
 import com.example.shopping.service.dummy.TestData;
 
 public class ProductPromotionTypeTest {

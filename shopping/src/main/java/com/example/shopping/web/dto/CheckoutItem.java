@@ -1,6 +1,6 @@
 package com.example.shopping.web.dto;
 
-import com.example.shopping.model.json.Product;
+import com.example.shopping.data.json.Product;
 
 public class CheckoutItem {
 	private Product product;

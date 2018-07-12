@@ -1,4 +1,4 @@
-package com.example.shopping.model;
+package com.example.shopping.data.model;
 
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import com.example.shopping.config.AppConfig;
-import com.example.shopping.model.json.Product;
+import com.example.shopping.data.json.Product;
 
 @Entity
 @Table(name="ordeer")

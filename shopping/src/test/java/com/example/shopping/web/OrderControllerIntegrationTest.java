@@ -22,9 +22,10 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.shopping.ShoppingApplication;
-import com.example.shopping.model.json.Product;
+import com.example.shopping.data.json.Product;
 import com.example.shopping.service.OrderService;
 import com.example.shopping.service.ProductService;
+import com.example.shopping.service.ProductServiceTest;
 import com.example.shopping.service.dummy.TestData;
 
 @SpringBootTest(classes = { ShoppingApplication.class } )
@@ -50,7 +51,7 @@ public class OrderControllerIntegrationTest {
                 .standaloneSetup(controller)
                 .build();
 
-	    	String url = ProductService.BASE_URL+ ProductService.URI_PRODUCTS;
+	    	String url = ProductServiceTest.BASE_URL+ ProductServiceTest.URI_PRODUCTS;
 	    List<Product> products = TestData.getProducts();
 	    
 		when(restTemplate.getForEntity(

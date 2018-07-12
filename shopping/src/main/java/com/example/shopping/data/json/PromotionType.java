@@ -1,9 +1,9 @@
-package com.example.shopping.model.json;
+package com.example.shopping.data.json;
 
 import java.math.BigDecimal;
 
-import com.example.shopping.model.Order;
-import com.example.shopping.model.OrderPromotion;
+import com.example.shopping.data.model.Order;
+import com.example.shopping.data.model.OrderPromotion;
 
 public enum PromotionType {
 	BUY_X_GET_Y_FREE {

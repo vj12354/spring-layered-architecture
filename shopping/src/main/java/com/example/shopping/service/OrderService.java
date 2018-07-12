@@ -9,14 +9,14 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.shopping.model.Order;
-import com.example.shopping.model.OrderItem;
-import com.example.shopping.model.OrderPromotion;
-import com.example.shopping.model.json.Product;
-import com.example.shopping.model.json.Promotion;
-import com.example.shopping.repo.OrderItemRepository;
-import com.example.shopping.repo.OrderPromotionRepository;
-import com.example.shopping.repo.OrderRepository;
+import com.example.shopping.data.json.Product;
+import com.example.shopping.data.json.Promotion;
+import com.example.shopping.data.model.Order;
+import com.example.shopping.data.model.OrderItem;
+import com.example.shopping.data.model.OrderPromotion;
+import com.example.shopping.data.repo.OrderItemRepository;
+import com.example.shopping.data.repo.OrderPromotionRepository;
+import com.example.shopping.data.repo.OrderRepository;
 
 @Service
 public class OrderService {

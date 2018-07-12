@@ -12,31 +12,39 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.shopping.ShoppingApplication;
 import com.example.shopping.config.AppConfig;
-import com.example.shopping.model.json.Product;
+import com.example.shopping.data.json.Product;
 import com.example.shopping.service.dummy.TestData;
 
 @SpringBootTest(classes = { ShoppingApplication.class } )
 public class ProductServiceTest {
+
+	public static final String BASE_URL = "http://localhost:8081";
+	public static final String URI_PRODUCTS = "/products";
 	
 	@Mock 
 	private RestTemplate restTemplate;
+	@Mock
+	private Environment env;
 	
 	@InjectMocks
 	private ProductService productService;
 	
-	@SuppressWarnings("rawtypes")
 	@Before
 	public void setup() {
         MockitoAnnotations.initMocks(this);
-        	String url = ProductService.BASE_URL+ ProductService.URI_PRODUCTS;
+        	String url = BASE_URL+ URI_PRODUCTS;
         Product[] products = TestData.getProducts().toArray(new Product[] {});
         
+//        when(env.getProperty("app.products.url")).thenReturn(url);
+        ReflectionTestUtils.setField(productService, "productsURL", url);
 		when(restTemplate.getForEntity(
         		url, Product[].class))
         		.thenReturn( new ResponseEntity<Product[]>(products, HttpStatus.OK));

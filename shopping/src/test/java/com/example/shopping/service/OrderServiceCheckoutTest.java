@@ -16,13 +16,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.example.shopping.ShoppingApplication;
-import com.example.shopping.model.Order;
-import com.example.shopping.model.OrderPromotion;
-import com.example.shopping.model.json.Product;
-import com.example.shopping.model.json.PromotionType;
-import com.example.shopping.repo.OrderItemRepository;
-import com.example.shopping.repo.OrderPromotionRepository;
-import com.example.shopping.repo.OrderRepository;
+import com.example.shopping.data.json.Product;
+import com.example.shopping.data.json.PromotionType;
+import com.example.shopping.data.model.Order;
+import com.example.shopping.data.model.OrderPromotion;
+import com.example.shopping.data.repo.OrderItemRepository;
+import com.example.shopping.data.repo.OrderPromotionRepository;
+import com.example.shopping.data.repo.OrderRepository;
 import com.example.shopping.service.dummy.TestData;
 
 @SpringBootTest(classes = { ShoppingApplication.class } )

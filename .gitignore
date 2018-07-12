@@ -16,6 +16,8 @@ gradle-app.setting
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
+build
+wiremock-standalone*.jar
 
 ### STS ###
 /bin

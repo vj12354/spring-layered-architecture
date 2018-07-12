@@ -3,8 +3,8 @@ package com.example.shopping.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.shopping.model.OrderPromotion;
-import com.example.shopping.repo.OrderPromotionRepository;
+import com.example.shopping.data.model.OrderPromotion;
+import com.example.shopping.data.repo.OrderPromotionRepository;
 
 @Service
 public class OrderPromotionService {

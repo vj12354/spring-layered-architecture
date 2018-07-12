@@ -1,4 +1,4 @@
-package com.example.shopping.model.json;
+package com.example.shopping.data.json;
 
 public class Product {
 	private String id;

@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.shopping.model.Order;
-import com.example.shopping.model.json.Product;
+import com.example.shopping.data.json.Product;
+import com.example.shopping.data.model.Order;
 import com.example.shopping.service.OrderService;
 import com.example.shopping.service.ProductService;
 import com.example.shopping.web.dto.CheckoutItem;

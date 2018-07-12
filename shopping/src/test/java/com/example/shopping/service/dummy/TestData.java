@@ -3,11 +3,11 @@ package com.example.shopping.service.dummy;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.shopping.model.Order;
-import com.example.shopping.model.OrderItem;
-import com.example.shopping.model.json.Product;
-import com.example.shopping.model.json.Promotion;
-import com.example.shopping.model.json.PromotionType;
+import com.example.shopping.data.json.Product;
+import com.example.shopping.data.json.Promotion;
+import com.example.shopping.data.json.PromotionType;
+import com.example.shopping.data.model.Order;
+import com.example.shopping.data.model.OrderItem;
 
 public class TestData {
 
