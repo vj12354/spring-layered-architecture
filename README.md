@@ -6,6 +6,7 @@ This example project implements shopping application based on below technologies
 - Consuming RESTful JSON services (via. wiremock)
 - Thymeleaf based web application
 - Gradle dependency
+- H2 Database while running / junit testing the application
 
 
 # Layered architecture (Spring Application)
